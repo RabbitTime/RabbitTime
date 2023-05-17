@@ -13,6 +13,7 @@
   "dependencies": {
     "calendar": "^0.1.1",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "js-cookie": "^3.0.5",
     "moment": "^2.29.4",
@@ -24,7 +25,8 @@
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.11.1",
-    "react-time-picker": "^6.0.4"
+    "react-time-picker": "^6.0.4",
+    "supertest": "^6.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
