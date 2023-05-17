@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import EventCreationPage from './EventCreationPage.jsx';
+import EventCreatorPage from '../pages/EventCreatorPage/EventCreatorPage.jsx';
 import TimeTable from './TimeTable.jsx';
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          <Route path='/' element={<EventCreationPage />} />
+          <Route path='/' element={<EventCreatorPage />} />
           <Route path='/event/:id' element={<TimeTable />} />
         </Routes>
       </div>
