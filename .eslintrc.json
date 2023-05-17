@@ -22,6 +22,7 @@
     "quotes": ["warn", "single"],
     "semi": ["warn", "always"],
     "space-infix-ops": "warn",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "react/prop-types": "warn"
   }
 }
