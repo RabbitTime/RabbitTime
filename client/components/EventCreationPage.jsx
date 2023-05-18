@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/TimePicker.css';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import './Cal.css';
