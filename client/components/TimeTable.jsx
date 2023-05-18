@@ -35,11 +35,11 @@ const TimeTable = () => {
     
     // Perform fetch operation.
     fetchEvent();
-    const cookie = Cookies.get('name')
-      if (cookie) {
-        setShowModal(false);
-        setName(cookie);
-      }
+    // const cookie = Cookies.get('name')
+    //   if (cookie) {
+    //     setShowModal(false);
+    //     setName(cookie);
+    //   }
   }, [id]); // Dependency array - effect runs when "id" changes.
 
   //handle form submission

@@ -1,0 +1,53 @@
+body {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.eventpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eventpage h1 {
+  margin-top: 3rem;
+}
+
+.timetable {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.timetable-hours {
+  margin-right: 1rem;
+  position: relative;
+  transform: translateY(1.5rem);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.81rem;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date label {
+  margin-bottom: 0.5rem;
+}
+
+.date label {
+  font-size: 1.2rem;
+}
+
+.timeslot {
+  height: 1.5rem;
+  width: 10rem;
+  outline: 1px solid hsl(0, 0%, 70%);
+}
+
+.timeslot:hover {
+  outline: 1px dashed;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import './EventPage.css';
 
 import Timetable from './Timetable.jsx';
 
@@ -20,7 +21,7 @@ const EventPage = () => {
   // only render component if event has been fetched
   if (event) {
     return (
-      <div>
+      <div className='eventpage'>
         <h1>{event.name}</h1>
         <Timetable event={event} />
       </div>
