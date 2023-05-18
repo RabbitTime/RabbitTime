@@ -3,9 +3,6 @@ import { useParams } from 'react-router-dom';
 import moment from 'moment';
 import Cookies from 'js-cookie';
 
-import NameModal from './NameModal.jsx';
-import UsersDisplay from './UsersDisplay.jsx';
-
 const TimeTable = () => {
   const { id } = useParams();
   // Set up the state
