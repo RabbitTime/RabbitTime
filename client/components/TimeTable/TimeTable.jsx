@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import moment from 'moment';
-import Modal from 'react-modal';
 import Cookies from 'js-cookie';
+
+import NameModal from './NameModal.jsx';
 import UsersDisplay from './UsersDisplay.jsx';
 
 const TimeTable = () => {
@@ -43,31 +44,6 @@ const TimeTable = () => {
       setName(cookie);
     }
   }, [id]); // Dependency array - effect runs when "id" changes.
-
-  //handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setShowModal(false);
-    //add a new user to backend
-    const response = await fetch(`/api/event/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        availability: [],
-      }),
-    });
-    //get the updated event data and set the state
-    const updatedEvent = await response.json();
-    const updatedSelectedSlots = updatedEvent.users.reduce((slots, user) => {
-      slots[user.name] = user.availability;
-      return slots;
-    }, {});
-
-    setSelectedSlots(updatedSelectedSlots);
-  };
 
   // Generate time slots based on user input
   const generateTimeSlots = (start, end) => {
@@ -198,18 +174,7 @@ const TimeTable = () => {
 
   return (
     <div>
-      <Modal isOpen={showModal}>
-        <h2>Enter your name</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type='text'
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <button type='submit'>Submit</button>
-        </form>
-      </Modal>
+      <NameModal id={id} showModal={showModal} setShowModal={setShowModal} setSelectedSlots={setSelectedSlots} setName={setName} />
       <h1>{event.name}</h1>
       {renderTable()}
       <UsersDisplay selectedSlots={selectedSlots} />
