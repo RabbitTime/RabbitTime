@@ -17,7 +17,7 @@ const EventPage = () => {
     fetchEvent();
   }, [id]);
 
-  // // only render component if event has been fetched
+  // only render component if event has been fetched
   if (event) {
     return (
       <div>

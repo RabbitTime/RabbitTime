@@ -1,26 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import moment from 'moment';
 
 import Timeslot from './Timeslot.jsx';
 
-const Date = ({ date, startTime, endTime }) => {
-  // create an array of Timeslot components
-  const timeslots = [];
-
+const Date = ({ date, startTime, endTime, users }) => {
   // use moment to allow 'adding' to these times
   startTime = moment(startTime, 'h:mm A');
-  endTime = moment(startTime, 'h:mm A');
-  
-  // add Timeslots from startTime to endTime
-  let currTime = startTime;
-  while (currTime < endTime) {
-    // format moment object back into a string
-    const time = currTime.format('h:mm A');
-    timeslots.push(<Timeslot key={time} time={time} />);
+  endTime = moment(endTime, 'h:mm A');
 
-    // increment by 30 minutes
-    currTime.add(30, 'minutes');
-  }
+  // create an array of Timeslot components
+  const timeslots = createTimes(startTime, endTime);
+  timeslots.map((time) => <Timeslot key={time} time={time}/>);
+  // TODO: create onClick functionality (and read timeslots functionality)
 
   return (
     <div>
@@ -29,5 +20,21 @@ const Date = ({ date, startTime, endTime }) => {
     </div>
   );
 };
+
+// creates an array of time strings from startTime to endTime (moment objects)
+function createTimes(startTime, endTime) {
+  const times = [];
+
+  // go from startTime to endTime
+  let current = startTime;
+  while (current < endTime) {
+    // push string version of time into array
+    times.push(current.format('h:mm A'));
+    // increment by 30 minutes
+    current.add(30, 'minutes');
+  }
+
+  return times;
+}
 
 export default Date;

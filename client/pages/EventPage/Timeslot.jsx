@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Timeslot = () => {
+const Timeslot = ({ time }) => {
   return (
     <div>
+      <p>{time}</p>
     </div>
   );
 };
