@@ -1,6 +1,7 @@
-.Yeti {
+.Rabbit {
     display: grid;
     grid-template: auto/ repeat(auto-fit, minmax(500px, 1fr));
+    text-align: center;
 }
 .text-center{
     font: impact;

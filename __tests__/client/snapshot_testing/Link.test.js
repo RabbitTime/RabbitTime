@@ -2,6 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Link from './Link';
 
+// only for testing setup
 
 it('changes the class when hovered', () => {
   const component = renderer.create(

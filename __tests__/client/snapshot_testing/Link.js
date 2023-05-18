@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 
+// only for testing setup
+
 const STATUS = {
   HOVERED: 'hovered',
   NORMAL: 'normal'

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
-import '../../components/Cal.css';
+// import '../../components/Cal.css';
+import './EventCreatorPage.css';
 
 import DateInput from './DateInput.jsx';
 import NameInput from './NameInput.jsx';
@@ -31,14 +32,17 @@ const EventCreatorPage = () => {
     console.log(name);
   }, [name]);  // bracket specifies dependencies (if you put brackets, useEffect will run once)
 
+
   return (
-    <div>
-      <h1>RabbitTime</h1>
-      <form>
-        <DateInput updateDates={updateDates} />
-        <NameInput setName={setName} />
-        <TimeInput />
-      </form>
+    <div id='main-div'>
+      <h1 id='header'>RabbitTime</h1>
+      <div id='calendar'>
+        <form id='calendar-form'>
+          <DateInput updateDates={updateDates} />
+          <NameInput setName={setName} />
+          <TimeInput />
+        </form>
+      </div>
     </div>
   );
 };
