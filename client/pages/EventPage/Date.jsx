@@ -9,12 +9,12 @@ const Date = ({ date, startTime, endTime, users }) => {
   endTime = moment(endTime, 'h:mm A');
 
   // create an array of Timeslot components
-  const timeslots = createTimes(startTime, endTime);
-  timeslots.map((time) => <Timeslot key={time} time={time}/>);
+  let timeslots = createTimes(startTime, endTime);
+  timeslots = timeslots.map((time) => <Timeslot key={time} time={time}/>);
   // TODO: create onClick functionality (and read timeslots functionality)
 
   return (
-    <div>
+    <div className='date'>
       <label>{date}</label>
       {timeslots}
     </div>
