@@ -8,7 +8,7 @@ const Timetable = ({ event }) => {
   const { start: startTime, end: endTime } = times;
   
   let hours = createHours(startTime, endTime);
-  hours = hours.map((hour) => <label>{hour}</label>)
+  hours = hours.map((hour) => <label key={hour}>{hour}</label>);
 
   dates = dates.map((date) => <Date key={date} date={date} startTime={startTime} endTime={endTime} users={users} />);
 
