@@ -146,6 +146,9 @@ module.exports = {
   // The test environment that will be used for testing
   // testEnvironment: "jest-environment-node",
 
+  // Eduardo: setting to jsdom for dom testing
+  testEnvironment: 'jsdom',
+
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
 
