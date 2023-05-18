@@ -10,7 +10,7 @@ const Event = require('../server/models/eventModel');
 describe('eventController unit tests', () => {
 
   describe('createEvent Route', () => {
-    it ('rsesponds with status 400 when input username is not a string', async () => {
+    it ('responds with status 400 when input username is not a string', async () => {
       const response = await request.post('/api/event').send({
         name: 8,
         dates: ['24/12/2019 09:15:00'],
