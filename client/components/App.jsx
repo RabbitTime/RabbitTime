@@ -1,10 +1,11 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import EventCreatorPage from '../pages/EventCreatorPage/EventCreatorPage.jsx';
-import TimeTable from './TimeTable.jsx';
+import EventPage from '../pages/EventPage/EventPage.jsx';
 
-// TODO: remove this after EventCreatorPage is done
+// TODO: get rid of this after EventCreatorPage & EventPage is finished
 import EventCreationPage from './EventCreationPage.jsx';
+import TimeTable from './TimeTable.jsx';
 
 const App = () => {
   return (
@@ -18,4 +19,5 @@ const App = () => {
     </Router>
   );
 };
+
 export default App;
