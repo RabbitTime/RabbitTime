@@ -3,7 +3,7 @@ import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
 import {EventContext} from './EventCreatorPage.jsx';
 
-const EventTimeRange = () => {
+const TimeRange = () => {
   const {startTime, endTime, handleStartTime, handleEndTime} = EventContext;
   return (
     <div className='timePickers'>
@@ -27,4 +27,4 @@ const EventTimeRange = () => {
   );
 };
 
-export default EventTimeRange;
+export default TimeRange;

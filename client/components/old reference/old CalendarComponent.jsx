@@ -4,7 +4,7 @@ import Calendar from 'react-calendar';
 import {EventContext} from './EventCreatorPage.jsx';
 // import moment from 'moment';
 
-const EventPageCalendar = ()=>{
+const CalendarComponent = ()=>{
   const {handleClick} = useContext(EventContext);
   return (      
     <div className='calenderSection'>  
@@ -17,4 +17,4 @@ const EventPageCalendar = ()=>{
   );
 };
 
-export default EventPageCalendar;
+export default CalendarComponent;
