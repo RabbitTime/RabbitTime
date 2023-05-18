@@ -15,10 +15,11 @@ const apiRouter = require('./routes/api');
 // parse request body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
 // route handlers
 // Parse all incoming cookies and store on req.cookies object
-app.use('/api', cookieParser(),  apiRouter);
+app.use('/api',  apiRouter);
 
 // unknown route handler
 app.use('*', (req, res) => {
