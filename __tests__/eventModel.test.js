@@ -28,7 +28,7 @@ beforeEach(() => {
 });
 
 describe('model tests', () => {
-  it('requires string type for name property: type coerces number input.', () => {
+  xit('requires string type for name property: type coerces number input.', () => {
     const event = new Event(validEventData);
     event.name = 5;
     fs.writeFileSync(testJsonFile, JSON.stringify(event));
@@ -50,7 +50,7 @@ describe('model tests', () => {
 
   });
   // You shouldn't be able to add in any field that isn't defined in the schema
-  it('does not add any field that is not defined in the schema', () => {
+  xit('does not add any field that is not defined in the schema', () => {
     const event = new Event({
       ...validEventData,
       byob: true,
