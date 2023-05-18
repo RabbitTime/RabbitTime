@@ -9,6 +9,9 @@ import TimeInput from './TimeInput.jsx';
 const EventCreatorPage = () => {
   const [dates, setDates] = useState([]);
   const [name, setName] = useState('');
+  const [startTime, setStartTime] = useState('12:15');
+  const [endTime, setEndTime] = useState('12:30');
+
 
   // selectedDate comes from clicking a date on the calendar (built in functionality)
   function updateDates(selectedDate) {
@@ -26,7 +29,6 @@ const EventCreatorPage = () => {
     setDates(newDates);
   }
 
-
   useEffect(() => {
     console.log(name);
   }, [name]);  // bracket specifies dependencies (if you put brackets, useEffect will run once)
@@ -37,7 +39,7 @@ const EventCreatorPage = () => {
       <form>
         <DateInput updateDates={updateDates} />
         <NameInput setName={setName} />
-        <TimeInput />
+        <TimeInput startTime={startTime} endTime={endTime} setStartTime={setStartTime} setEndTime={setEndTime} />
       </form>
     </div>
   );

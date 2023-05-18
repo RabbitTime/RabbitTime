@@ -2,6 +2,17 @@
     display: grid;
     grid-template: auto/ repeat(auto-fit, minmax(500px, 1fr));
 }
+
+#root {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.times {
+  flex-direction: column;
+}
+
 .text-center{
     font: impact;
     font-weight: bold;
@@ -159,9 +170,19 @@ section{
     }
   }
 
-  .start {
-    margin-right: 50px;
+  /* .start {
+    width: 500px;
   }
   .end{
-    margin-left: 50px;
+    width: 500px;
+  } */
+
+.react-time-picker__inputGroup__minute,
+.react-time-picker__inputGroup__hour {
+    width: 10rem;
+  }
+  .start input,
+  .end input {
+    width: 10rem;
+    height: 2rem;
   }
