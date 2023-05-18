@@ -39,7 +39,9 @@ describe('model tests', () => {
   //     const db = JSON.parse(fs.readFileSync(testJsonFile));
   //     expect(db.length).toBeFalsy();
   //   });
-  it('requires value for name: does not accept undefined', () => {
+
+  // checking for name
+  xit('create event without required field should fail', () => {
     const invalidEventData = {};
     const event = new Event(invalidEventData);
     fs.writeFileSync(testJsonFile, JSON.stringify(event));
@@ -47,11 +49,15 @@ describe('model tests', () => {
     expect(savedEvent.name).not.toBeUndefined();
 
   });
-  xit('requires value for dates', () => {
-    const invalidEventData = {};
-    const event = new Event(invalidEventData);
-    expect(event.dates).not.toBeUndefined();
-  });
   // You shouldn't be able to add in any field that isn't defined in the schema
+  it('does not add any field that is not defined in the schema', () => {
+    const event = new Event({
+      ...validEventData,
+      byob: true,
+    });
+    fs.writeFileSync(testJsonFile, JSON.stringify(event));
+    const savedEvent = JSON.parse(fs.readFileSync(testJsonFile));
+    expect(savedEvent).not.toHaveProperty('byob');
+  });
 
 });

@@ -1,1 +1,1 @@
-{"dates":[],"_id":"64656488b56b23d27167ad6e","users":[]}
+{"name":"rabbit time","dates":["1/1/2001"],"times":{"start":"now","end":"then"},"users":[{"name":"Stabby","availability":[{"date":"now","timeslots":["right now"],"_id":"64662f1632c29774bf1e697a"}],"_id":"64662f1632c29774bf1e6979"}],"_id":"64662f1632c29774bf1e6978"}
