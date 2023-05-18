@@ -9,7 +9,7 @@ const Event = require('../server/models/eventModel');
 
 describe('eventController unit tests', () => {
 
-  xdescribe('createEvent Route', () => {
+  describe('createEvent Route', () => {
     it ('rsesponds with status 400 when input username is not a string', async () => {
       const response = await request.post('/api/event').send({
         name: 8,
@@ -64,7 +64,7 @@ describe('eventController unit tests', () => {
 
   });
   //64663d58e869c4c1734e4ad9
-  xdescribe('getEvent Route', () => {
+  describe('getEvent Route', () => {
     it ('responds with 400 status if query id is not valid', async () => {
       const response = await request.get('/api/event/{test: 12}').set('Accept', 'application/json');
       expect(response.statusCode).toBe(400);
@@ -86,7 +86,10 @@ describe('eventController unit tests', () => {
     it ('responds with a 400 status if the passed in name in body is not correct', async () => {
       const response = await request.put('/api/event/6466439d21686939e9f320ad').set('Accept', 'application/json').send({
         name: 8,
-        availability: ['24/12/2019 09:15:00']
+        availability: [
+          {date: '2023.5.15',
+            timeslots: ['9:00 AM'] }
+        ]
       });
       expect(response.statusCode).toBe(400);
     });
@@ -94,7 +97,10 @@ describe('eventController unit tests', () => {
     it ('responds with a 200 status if the matching item is updated', async () => {
       const response = await request.put('/api/event/6466439d21686939e9f320ad').set('Accept', 'application/json').send({
         name: 'hunter',
-        availability: ['24/12/2019 08:15:00']
+        availability: [
+          {date: '2023.5.15',
+            timeslots: ['9:00 AM'] }
+        ]
       });
       expect(response.statusCode).toBe(200);
     });
@@ -102,14 +108,17 @@ describe('eventController unit tests', () => {
     it ('responds with the updated item on a sucessful call', async () => {
       const response = await request.put('/api/event/6466439d21686939e9f320ad').set('Accept', 'application/json').send({
         name: 'hunter',
-        availability: ['24/12/2019 10:15:00']
+        availability: [
+          {date: '2023.5.15',
+            timeslots: ['9:00 AM'] }
+        ]
       });
       expect(response.body.name).toEqual('hunter');
     });
 
   });
 
-  xdescribe('catchAllRoute', () => {
+  describe('catchAllRoute', () => {
     it ('responds with a 404 status if the route is not found', async () => {
       const response = await request.get('/events');
       expect(response.statusCode).toBe(404);
