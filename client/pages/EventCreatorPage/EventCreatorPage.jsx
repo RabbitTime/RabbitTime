@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import '../../components/Cal.css';
 
 import DateInput from './DateInput.jsx';
 import NameInput from './NameInput.jsx';
