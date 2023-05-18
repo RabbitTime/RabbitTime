@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
   name: { type: String, required: true },
   dates: { type: [String], required: true },
-  times : {
+  times: {
     start: {type: String, required: true},
     end: {type: String, required: true}
   },
